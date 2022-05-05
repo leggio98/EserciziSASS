@@ -1,0 +1,43 @@
+@use "./base"; 
+@use "./rem-to-px";
+
+
+body {
+    div {
+        @include base.border-container;
+        border: rem-to-px.toRem(1) solid;
+        width: calc(100% - 90px);
+        margin: rem-to-px.toRem(25);
+        height: rem-to-px.toRem(300);
+        padding-right: rem-to-px.toRem(20);
+        padding-left: rem-to-px.toRem(20);
+
+        h1 {
+            @include base.high-text;
+            text-align: center;
+            text-decoration: underline;
+            text-underline-offset: rem-to-px.toRem(6);
+        }
+
+        section:nth-child(2) {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+
+            article:nth-child(1),
+            article:nth-child(3) {
+                @include base.blue-article-style;
+            }
+            article:nth-child(2),
+            article:nth-child(4) {
+                @include base.red-article-style;
+
+        }
+    }
+        section:nth-child(3) {
+            @include base.last-article;
+        }
+
+    }
+
+}

@@ -1,0 +1,44 @@
+$red_color:red;
+$blue_color: blue;
+$green_color: green;
+
+@use "./rem-to-px";
+
+@mixin article-style {
+    border: $green_color rem-to-px.toRem(1) solid;
+    font-size: 1rem;
+    text-align: center;
+}
+
+@mixin red-article-style {
+    @include article-style;
+    color: $red_color;
+}
+
+@mixin blue-article-style {
+    @include article-style;
+    color: $blue_color;
+}
+
+@mixin green-article-style {
+    @include article-style;
+    color: $green_color;
+}
+
+@mixin border-container {
+    border: $red_color;
+}
+
+@mixin high-text {
+    color:$green_color;
+    text-decoration:$blue_color;
+}
+
+@mixin last-article {
+    font-size: rem-to-px.toRem(24);
+    margin-top: rem-to-px.toRem(25);
+    align-items:center;
+    color: $green_color;
+    text-align:center;
+    border:rem-to-px.toRem(1) solid $blue_color;
+}
